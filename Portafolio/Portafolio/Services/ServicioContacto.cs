@@ -20,7 +20,7 @@ namespace Portafolio.Services {
                 SmtpClient smtp = new SmtpClient("smtp.gmail.com");
                 smtp.Port = 587;
                 smtp.UseDefaultCredentials = false;
-                smtp.Credentials = new NetworkCredential("cesarvillalobosolmos.01@gmail.com", "ujxhnygqonzpcsyq");
+                smtp.Credentials = new NetworkCredential("cesarvillalobosolmos.01@gmail.com", "xxx");
                 smtp.EnableSsl = true;
                 smtp.Send(mail);
 
