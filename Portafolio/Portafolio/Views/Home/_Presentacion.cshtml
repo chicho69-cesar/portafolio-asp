@@ -1,0 +1,43 @@
+﻿<!-- Esto es una vista parcial, nos sirve para separar nuestro codigo
+de la vista principal y de esta manera evitar que se nos junte muchisimo
+codigo, ayudandonos al momento de las actualizaciones y todo eso-->
+
+@{
+    string EliminarEspacios(string? mensaje) {
+        if (mensaje == null) return "";
+        return mensaje.Trim();
+    }
+}
+
+<div class="text-center">
+    <h1 class="display-4 title">
+        Hola, me llamo @ViewBag.Nombre, tengo @ViewBag.Edad años de edad
+        y soy <i>"Desarrollador de Software"</i>
+        </h1>
+
+    <h2 class="display-6 message">
+        @EliminarEspacios(ViewBag.Mensaje)
+    </h2>
+
+    <img class="foto" src="~/imagenes/foto.jpg" alt="Foto de Cesar" />
+</div>
+
+<div class="text-center">
+    <img class="imagen-dotnet col-md-4" src="~/imagenes/dotnet.png" />
+</div>
+
+<div class="container-fluid content">
+    <div class="row justify-content-center align-content-center">
+        <div class="col col-md-8 main">
+            <h1 class="text-center main-title">Te doy la bienvenida a mi portafolio</h1>
+
+            <p class="main-text">
+                Soy un apacionado por el desarrollo de software y por la programación
+                en general, estoy en este mundo desde enero del 2018, en este maravilloso
+                camino he tenido la oportunidad de llevar a cabo proyectos de los
+                cuales me siento muy orgulloso, ademas de que he tenido la oportunidad
+                de vivir grandes experiencias todo gracias a la programación.
+            </p>
+        </div>
+    </div>
+</div>

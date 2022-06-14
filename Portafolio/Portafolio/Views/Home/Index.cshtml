@@ -1,0 +1,52 @@
+﻿<!-- Creamos un modelo fuertemente tipado con un Model -->
+@*@model int*@ <!-- Podemos recibir en el model cualquier tipo de dato-->
+@model HomeIndexViewModel
+
+<!-- Esta seccion nos permite crear codigo C# -->
+@{
+    ViewData["Title"] = "Inicio";
+
+    string EliminarEspacios(string? mensaje) {
+        if (mensaje == null) return "";
+        return mensaje.Trim();
+    }
+}
+
+<!--<div class="text-center">
+    Podemos utilizar varibales almacenadas en el ViewBag
+    <h1 class="display-4 title">
+        Hola, me llamo @ViewBag.Nombre, tengo @ViewBag.Edad años de edad
+        y soy <i>"Desarrollador de Software"</i>
+        </h1>
+
+    <h2 class="display-6 message">
+        @EliminarEspacios(ViewBag.Mensaje)
+        Utilizamos el modelo
+        mediante la clase Persona y una funcion que creamos
+    </h2>
+
+    <img class="foto" src="~/imagenes/foto.jpg" alt="Foto de Cesar" />
+</div>
+
+<div class="text-center">
+    <img class="imagen-dotnet col-md-4" src="~/imagenes/dotnet.png" />
+</div> -->
+
+<partial name="_Presentacion"/> <!-- Llamamos a una vista parcial-->
+<partial name="_Habilidades"/>
+<partial name="_Proyectos" model="Model.Proyectos"/> <!-- Le pasamos un modelo 
+nuestra vista parcial para que lo pueda usar posteriormente -->
+
+<!-- Podemos poner aqui ademas de codigo html, css y javascript -->
+<style>
+    .title {
+        font-size: 40px;
+        font-weight: 400;
+        font-family: serif;
+        color: #0094ff;
+    }
+</style>
+
+<script>
+    // document.querySelector('.title').innerHTML = 'Hola, Soy Cesar Villalobos Olmos';
+</script>
